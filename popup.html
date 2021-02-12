@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Playback Rate Controller's Popup</title>
+  <link rel="stylesheet" href="./popup.css">
+  <script src="popup.js"></script>
+</head>
+<body>
+<div id="prc-popup-no-content">
+  <div class="prc-short-message">
+    <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1"
+         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <symbol id="icon-wondering" viewBox="0 0 1024 1024">
+          <title>wondering</title>
+          <path class="path1"
+                d="M512 1024c282.77 0 512-229.23 512-512s-229.23-512-512-512-512 229.23-512 512 229.23 512 512 512zM512 96c229.75 0 416 186.25 416 416s-186.25 416-416 416-416-186.25-416-416 186.25-416 416-416zM745.74 601.62l22.488 76.776-437.008 128.002-22.488-76.776zM256 320c0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64s-64-28.654-64-64zM640 320c0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64s-64-28.654-64-64z"></path>
+        </symbol>
+      </defs>
+    </svg>
+    <div>
+      <svg class="icon icon-wondering">
+        <use xlink:href="#icon-wondering"></use>
+      </svg>
+    </div>
+    <div>在本页上没有检测到音频/视频内容</div>
+  </div>
+</div>
+
+<div id="prc-popup-content" class="hidden">
+  <div class="prc-top-controls">
+    <div class="prc-top-controls-slower">
+      <button id="prc-slower" class="prc-control-btn prc-control-faster-slower-btn"><span>-</span></button>
+    </div>
+    <div class="prc-top-controls-rate">
+      <span id="prc-rate" class="prc-control-rate"></span><br>
+      <span class="prc-control-rate-label">播放速度</span>
+    </div>
+    <div class="prc-top-controls-faster">
+      <button id="prc-faster" class="prc-control-btn prc-control-faster-slower-btn" autofocus><span>+</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="prc-extra-controls">
+    <div class="prc-extra-controls-slow">
+      <div class="prc-extra-controls-slow-top">
+        <button id="prc-rate-05" class="prc-control-btn prc-control-rate-btn"> 0.5x</button>
+      </div>
+      <div class="prc-extra-controls-slow-bottom">
+        <button id="prc-rate-08" class="prc-control-btn prc-control-rate-btn"> 0.8x</button>
+      </div>
+    </div>
+    <div class="prc-extra-controls-normal">
+      <button id="prc-rate-1" class="prc-control-btn prc-control-rate-btn"> 1.0x</button>
+    </div>
+    <div class="prc-extra-controls-fast">
+      <div class="prc-extra-controls-fast-top">
+        <button id="prc-rate-15" class="prc-control-btn prc-control-rate-btn"> 1.2x</button>
+      </div>
+      <div class="prc-extra-controls-fast-bottom">
+        <button id="prc-rate-2" class="prc-control-btn prc-control-rate-btn"> 1.5x</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="prc-controls-slider">
+    <input id="prc-rate-slider" type="range" min="0.1" max="16.0" value="1" step=".1">
+  </div>
+
+  <div class='tg-list-item'>
+    <div class="label_text">连续播放自动加速</div>
+    <input class='tgl tgl-light' id='autoplay' type='checkbox'>
+    <label class='tgl-btn' for='autoplay'></label>
+  </div>
+
+</div>
+</body>
+</html>
